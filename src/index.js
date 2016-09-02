@@ -7,6 +7,7 @@ import App from './components/Main';
 import {IndexRoute, Router, Route} from 'react-router';
 import ResearchComponent from 'components/pages/ResearchComponent';
 import DashboardComponent from 'components/pages/DashboardComponent';
+import ProjectsComponent from 'components/pages/ProjectsComponent';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
@@ -20,6 +21,7 @@ ReactDOM.render(
     <Route path="/" component={App}>
       <IndexRoute component={DashboardComponent}/>
       <Route path="/research" component={ResearchComponent} />
+      <Route path="/projects" component={ProjectsComponent} />
     </Route>
   </Router>
 , document.getElementById('app'));
