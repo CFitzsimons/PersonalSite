@@ -12,15 +12,12 @@ require('styles/pages/Projects.css');
 class ProjectsComponent extends React.Component {
   constructor(){
     super();
-    console.log("Starting...");
-    console.log("Initial width", window.innerWidth);
     this.state = {
       multiRow: (window.innerWidth - 750) > 0
     }
   }
   handleResize(){
     let newValue = (window.innerWidth - 750 > 0);
-    console.log("Width update:", window.innerWidth, newValue);
     this.setState({
       multiRow: newValue
     });
@@ -36,7 +33,7 @@ class ProjectsComponent extends React.Component {
     let mappable = [1,2,3,4,5];
     return (
       <div>
-        <div style={{paddingTop:'10'}}>
+        <div style={{paddingTop:'10px'}}>
           <Card style={Object.assign({marginLeft:'5%', marginRight:'5%', height:'100%'}, this.state.multiRow ? {display:'inline-block', width:'40%'} : {})}>
             <CardTitle title="Fan Engagement Application" subtitle="React Native, AngularJS, NodeJS" />
             <CardText>
@@ -47,7 +44,7 @@ class ProjectsComponent extends React.Component {
               <FlatButton label="Ballzey" />
             </CardActions>
           </Card>
-          <Card style={Object.assign({marginLeft:'5%', marginRight:'5%', height:'100%'}, this.state.multiRow ? {display:'inline-block', width:'40%'} : {marginTop:'10'})}>
+          <Card style={Object.assign({marginLeft:'5%', marginRight:'5%', height:'100%'}, this.state.multiRow ? {display:'inline-block', width:'40%'} : {marginTop:'10px'})}>
 
             <CardTitle title="Logistics Management System" subtitle="Javascript, AngularJS, REST" />
             <CardText>
@@ -61,7 +58,7 @@ class ProjectsComponent extends React.Component {
           </Card>
 
         </div>
-        <div style={{paddingTop:'10'}}>
+        <div style={{paddingTop:'10px'}}>
           <Card style={Object.assign({marginLeft:'5%', marginRight:'5%', height:'100%'}, this.state.multiRow ? {display:'inline-block', width:'40%'} : {})}>
             <CardTitle title="Skype Chat Bot" subtitle="C#, Windows Services" />
             <CardText>
@@ -72,7 +69,7 @@ class ProjectsComponent extends React.Component {
               <FlatButton label="Github" onTouchTap={() => {this.navigate('https://github.com/CFitzsimons/SkypeChatBot')}}/>
             </CardActions>
           </Card>
-          <Card style={Object.assign({marginLeft:'5%', marginRight:'5%', height:'100%'}, this.state.multiRow ? {display:'inline-block', width:'40%'} : {marginTop:'10'})}>
+          <Card style={Object.assign({marginLeft:'5%', marginRight:'5%', height:'100%'}, this.state.multiRow ? {display:'inline-block', width:'40%'} : {marginTop:'10px'})}>
 
             <CardTitle title="Git Log Translator" subtitle="Java, Google API" />
             <CardText>
@@ -80,7 +77,7 @@ class ProjectsComponent extends React.Component {
             The translator descends though all git log entries in the current branch and appends a localisation to the notes section.  The translation is done by Google Translate and the user is required to provide their own API key. The application is short but effective and written in Java.
             </CardText>
             <CardActions>
-              <FlatButton label="Github"/>
+              <FlatButton label="Github" onTouchTap={() => {this.navigate('https://github.com/CFitzsimons/Git-Translator')}}/>
             </CardActions>
           </Card>
 

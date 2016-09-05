@@ -8,7 +8,7 @@ class PlaygroundComponent extends React.Component {
   render() {
     return (
       <div className="playground-component">
-        Please edit src/components/pages//PlaygroundComponent.js to update this component!
+        Page not implemented yet...
       </div>
     );
   }

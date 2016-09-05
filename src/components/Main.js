@@ -49,9 +49,9 @@ class AppComponent extends React.Component {
             />
             <Link to="/" style={{textDecoration: 'none'}}><MenuItem onTouchTap={this.toggleDrawer.bind(this)}>Home</MenuItem></Link>
             <Link to="/projects" style={{textDecoration: 'none'}}><MenuItem onTouchTap={this.toggleDrawer.bind(this)}>Projects</MenuItem></Link>
-            <Link to="/research" style={{textDecoration: 'none'}}><MenuItem onTouchTap={this.toggleDrawer.bind(this)}>Research</MenuItem></Link>
-            <Link to="/blog" style={{textDecoration: 'none'}}><MenuItem onTouchTap={this.toggleDrawer.bind(this)}>Blog</MenuItem></Link>
-            <Link to="/playground" style={{textDecoration: 'none'}}><MenuItem onTouchTap={this.toggleDrawer.bind(this)}>Playground</MenuItem></Link>
+            <Link to="/" style={{textDecoration: 'none'}}><MenuItem onTouchTap={this.toggleDrawer.bind(this)}>Research</MenuItem></Link>
+            <Link to="/" style={{textDecoration: 'none'}}><MenuItem onTouchTap={this.toggleDrawer.bind(this)}>Blog</MenuItem></Link>
+            <Link to="/" style={{textDecoration: 'none'}}><MenuItem onTouchTap={this.toggleDrawer.bind(this)}>Playground</MenuItem></Link>
           </Drawer>
           {this.props.children}
         </div>

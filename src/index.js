@@ -5,9 +5,13 @@ import App from './components/Main';
 
 
 import {IndexRoute, Router, Route} from 'react-router';
+import { hashHistory } from 'react-router'
+
 import ResearchComponent from 'components/pages/ResearchComponent';
 import DashboardComponent from 'components/pages/DashboardComponent';
 import ProjectsComponent from 'components/pages/ProjectsComponent';
+
+
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
@@ -17,7 +21,7 @@ injectTapEventPlugin();
 
 // Render the main component into the dom
 ReactDOM.render(
-  <Router>
+  <Router history={hashHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={DashboardComponent}/>
       <Route path="/research" component={ResearchComponent} />

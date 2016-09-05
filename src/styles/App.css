@@ -2,3 +2,10 @@
 .muidocs-icon-custom-github:before {
     content: "\e625";
 }
+/* css file */
+.disabled-link {
+  pointer-events: none;
+}
+a[disabled] {
+    pointer-events: none;
+}
