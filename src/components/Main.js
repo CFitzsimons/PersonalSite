@@ -14,7 +14,10 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
+import Menu from 'material-ui/Menu';
 import FontIcon from 'material-ui/FontIcon';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 
 
 
@@ -47,11 +50,11 @@ class AppComponent extends React.Component {
               iconElementRight={<FontIcon onTouchTap={this.toggleDrawer.bind(this)} className="material-icons" style={{lineHeight:'64px', cursor:'pointer', color:'white'}}>close</FontIcon>}
               iconStyleRight={{margin: '0'}}
             />
-            <Link to="/" style={{textDecoration: 'none'}}><MenuItem onTouchTap={this.toggleDrawer.bind(this)}>Home</MenuItem></Link>
+            <Link to="/" style={{textDecoration: 'none', "-webkit-appearance": "none"}}><MenuItem onTouchTap={this.toggleDrawer.bind(this)}>Home</MenuItem></Link>
             <Link to="/projects" style={{textDecoration: 'none'}}><MenuItem onTouchTap={this.toggleDrawer.bind(this)}>Projects</MenuItem></Link>
-            <Link to="/" style={{textDecoration: 'none'}}><MenuItem onTouchTap={this.toggleDrawer.bind(this)}>Research</MenuItem></Link>
-            <Link to="/" style={{textDecoration: 'none'}}><MenuItem onTouchTap={this.toggleDrawer.bind(this)}>Blog</MenuItem></Link>
-            <Link to="/" style={{textDecoration: 'none'}}><MenuItem onTouchTap={this.toggleDrawer.bind(this)}>Playground</MenuItem></Link>
+            <Link to="/" style={{textDecoration: 'none'}}><MenuItem onTouchTap={this.toggleDrawer.bind(this)}>Research <small>(soon)</small></MenuItem></Link>
+            <Link to="/" style={{textDecoration: 'none'}}><MenuItem onTouchTap={this.toggleDrawer.bind(this)}>Blog <small>(soon)</small></MenuItem></Link>
+            <Link to="/playground" style={{textDecoration: 'none'}}><MenuItem onTouchTap={this.toggleDrawer.bind(this)}>Game Jams and Hackathons</MenuItem></Link>
           </Drawer>
           {this.props.children}
         </div>

@@ -62,10 +62,13 @@
   },
   "dependencies": {
     "core-js": "^2.0.0",
+    "firebase": "^3.3.0",
+    "history": "^2.1.2",
     "material-ui": "^0.15.4",
     "normalize.css": "^4.0.0",
     "react": "^15.0.0",
     "react-dom": "^15.0.0",
+    "react-iframe": "0.0.4",
     "react-router": "^2.7.0",
     "react-tap-event-plugin": "^1.0.0"
   }
