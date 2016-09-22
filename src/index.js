@@ -15,6 +15,7 @@ import ResearchComponent from 'components/pages/ResearchComponent';
 import DashboardComponent from 'components/pages/DashboardComponent';
 import ProjectsComponent from 'components/pages/ProjectsComponent';
 import PlaygroundComponent from 'components/pages/PlaygroundComponent';
+import BlogIndexComponent from 'components/blog/BlogIndexComponent';
 import GameComponent from 'components/pages/GameComponent';
 
 
@@ -42,6 +43,7 @@ ReactDOM.render(
     <Route path="/" component={App}>
       <IndexRoute component={DashboardComponent}/>
       <Route path="/research" component={ResearchComponent} />
+      <Route path="/blog" component={BlogIndexComponent}/>
       <Route path="playground">
         <IndexRoute  component={PlaygroundComponent}/>
         <Route path=":gameTitle" component={GameComponent}/>

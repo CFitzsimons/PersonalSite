@@ -7,16 +7,16 @@
 // import TestUtils from 'react-addons-test-utils';
 import createComponent from 'helpers/shallowRenderHelper';
 
-import IndexJsComponent from 'components/pages/IndexJsComponent.js';
+import BlogIndexComponent from 'components//blog/BlogIndexComponent.js';
 
-describe('IndexJsComponent', () => {
+describe('BlogIndexComponent', () => {
   let component;
 
   beforeEach(() => {
-    component = createComponent(IndexJsComponent);
+    component = createComponent(BlogIndexComponent);
   });
 
   it('should have its component name as default className', () => {
-    expect(component.props.className).to.equal('indexjs-component');
+    expect(component.props.className).to.equal('blogindex-component');
   });
 });
