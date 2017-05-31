@@ -3,9 +3,10 @@ import React from 'react';
 import Drawer from 'material-ui/Drawer';
 import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
-import NavigationClose from 'material-ui/svg-icons/navigation/close';
-import NavigationMenu from 'material-ui/svg-icons/navigation/menu';
+import NavigationClose from 'material-ui-icons/Close';
+import NavigationMenu from 'material-ui-icons/Menu';
 
+import Navigation from './navigation';
 import Dashboard from './dashboard/index';
 import Projects from './projects/index';
 import Research from './research/index';
@@ -53,6 +54,7 @@ export default class extends React.Component {
               </IconButton>
             }
           />
+          <Navigation />
         </Drawer>
         <Routes />
       </span>
