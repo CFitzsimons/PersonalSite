@@ -24,11 +24,11 @@ const style = {
   },
 };
 
-const introText = 'I am a PhD Student funded by the Irish Research Council conducting' +
-  'research into program construction in immersive environments.' +
-  'A great deal of my current work revolves around investigating' +
-  'the cognitive benefits of an immersive language as well as novel' +
-  'approaches to designing immersive programming systems.';
+const introText = 'I am a PhD Student funded by the Irish Research Council conducting ' +
+  'research into program construction in immersive environments.  ' +
+  'A great deal of my current work revolves around investigating ' +
+  'the cognitive benefits of an immersive language as well as novel ' +
+  'approaches to designing immersive programming systems.  ';
 
 export default class Dashboard extends Component {
   componentDidMount() {
