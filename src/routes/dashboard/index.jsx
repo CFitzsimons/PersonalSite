@@ -22,6 +22,9 @@ const style = {
   textContainer: {
     flex: 0.7,
   },
+  card: {
+    margin: 10,
+  },
 };
 
 const introText = 'I am a PhD Student funded by the Irish Research Council conducting ' +
@@ -37,7 +40,7 @@ export default class Dashboard extends Component {
   render() {
     return (
       <div style={style.container}>
-        <Card style={{margin: 10}}>
+        <Card style={style.card}>
           <CardHeader
             title="Colin Fitzsimons"
             subtitle="PhD Student"

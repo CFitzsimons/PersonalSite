@@ -54,7 +54,7 @@ export default class extends React.Component {
               </IconButton>
             }
           />
-          <Navigation />
+          <Navigation closeEvent={this.toggleNavigation} />
         </Drawer>
         <Routes />
       </span>
