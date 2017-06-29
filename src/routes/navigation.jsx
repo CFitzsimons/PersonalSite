@@ -1,7 +1,7 @@
 import React from 'react';
 import { browserHistory } from 'react-router';
 
-const Style = {
+const style = {
   menuItem: {
     display: 'flex',
     flexDirection: 'row',
@@ -48,11 +48,11 @@ const menuItems = [
 export default props => (
   <span>
     {menuItems.map(item => (
-      <div key={item.title} style={Style.menuItem}>
-        <div style={Style.filler}>&zwnj;</div>
+      <div key={item.title} style={style.menuItem}>
+        <div style={style.filler}>&zwnj;</div>
         <div
           className="menu-item"
-          style={Style.textContainer}
+          style={style.textContainer}
           onTouchTap={() => { browserHistory.push(item.link); props.closeEvent(); }}
         >
           <h2>{item.title}</h2>
