@@ -13,13 +13,13 @@
   },
   "dependencies": {
     "bib2json": "0.0.1",
-    "material-ui": "^0.16.7",
-    "material-ui-icons": "^1.0.0-alpha.3",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "react-router": "^3.0.2",
-    "react-tap-event-plugin": "^2.0.0",
-    "react-textfit": "^0.1.8"
+    "material-ui": "0.16.7",
+    "material-ui-icons": "1.0.0-alpha.3",
+    "react": "15.5.4",
+    "react-dom": "^15.5.4",
+    "react-router": "3.0.5",
+    "react-tap-event-plugin": "2.0.1",
+    "react-textfit": "0.1.9"
   },
   "scripts": {
     "start": "react-scripts start -x jsx",
