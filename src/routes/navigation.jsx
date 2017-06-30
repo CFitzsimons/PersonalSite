@@ -37,11 +37,11 @@ const menuItems = [
   },
   {
     title: 'Projects',
-    link: '/projects',
+    link: '/nill',
   },
   {
     title: 'Contact',
-    link: '/contact',
+    link: '/nill',
   },
 ];
 
