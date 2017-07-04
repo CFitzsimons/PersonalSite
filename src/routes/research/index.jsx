@@ -22,10 +22,6 @@ const tabs = [
     label: 'Publications',
     component: Publications,
   },
-  {
-    label: 'Reading',
-    component: Reading,
-  },
 ];
 
 export default class Research extends Component {
