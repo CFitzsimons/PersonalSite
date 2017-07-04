@@ -2,5 +2,5 @@
   "type": "react",
   "command": "build",
   "target": "sample",
-  "build_folder": "build"
+  "build_folder": "/build"
 }
