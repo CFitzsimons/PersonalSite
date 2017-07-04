@@ -1,0 +1,9 @@
+body {
+  margin: 0px !important;
+  padding: 0px !important;
+  background-color: rgb(42,45,50);
+}
+.menu-item:hover {
+  background-color: rgb(36,39,44) !important;
+  cursor: pointer;
+}
