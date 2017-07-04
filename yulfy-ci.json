@@ -1,5 +1,6 @@
 {
   "type": "react",
   "command": "build",
-  "target": "sample"
+  "target": "sample",
+  "build_folder": "build"
 }
