@@ -1,5 +1,5 @@
 FROM node:0.12
-MAINTAINER tribou
+MAINTAINER Yulfy
 
 # Prepare app directory
 RUN mkdir -p /usr/src/app
@@ -12,8 +12,11 @@ RUN npm install
 # Build the app
 RUN npm start build
 
-# Expose the app port
-EXPOSE 80
+# Grab server
+RUN npm install -g serve
 
 # Start the app
 CMD npm start
+
+# Expose the app port
+EXPOSE 80
