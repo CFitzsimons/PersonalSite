@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const style = {
   loaderContainer: {
@@ -41,5 +42,5 @@ export default class Loader extends React.Component {
 
 }
 Loader.propTypes = {
-  isLoaded: React.PropTypes.bool.isRequired,
+  isLoaded: PropTypes.bool.isRequired,
 };
