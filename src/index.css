@@ -1,6 +1,7 @@
 body {
   margin: 0px !important;
   padding: 0px !important;
+  overflow: hidden;
 }
 .menu-item:hover {
   background-color: rgb(36,39,44) !important;
