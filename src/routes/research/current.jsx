@@ -1,13 +1,7 @@
 import React from 'react';
-import Loader from '../../components/loader';
+import Loader from '../../components/Loader';
+import InformationContainer from '../../components/InformationContainer';
 import Constants from '../../constants.json';
-
-// Fetch paragraphs from Text/Research/Current
-// Should come in object:
-// {
-//   0: 'paragraph 2',
-//   1: 'paragraph 2'
-// }
 
 export default class Current extends React.Component {
   constructor() {
@@ -23,14 +17,14 @@ export default class Current extends React.Component {
       .then((responseJson) => {
         this.setState({
           isLoaded: true,
-          data: responseJson,
+          data: Object.values(responseJson),
         });
       });
   }
   render() {
     return (
       <Loader isLoaded={this.state.isLoaded}>
-        {this.state.data.map(paragraph => (<p key={paragraph.substring(0, 5)}>{paragraph}</p>))}
+        {this.state.data.map(data => <InformationContainer key={data.title} title={data.title} paragraphs={data.paragraphs} subtitle={`${data.fromDate} - ${data.toDate}`} />)}
       </Loader>
     );
   }

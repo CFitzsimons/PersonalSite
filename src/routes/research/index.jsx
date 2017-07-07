@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Tabs, Tab } from 'material-ui/Tabs';
+import Tabs, { Tab } from 'material-ui/Tabs';
 import Paper from 'material-ui/Paper';
 
 import Current from './current';
@@ -8,8 +8,7 @@ import Reading from './reading';
 
 const style = {
   paper: {
-    margin: 10,
-    padding: 10,
+
   },
 };
 
@@ -22,30 +21,52 @@ const tabs = [
     label: 'Publications',
     component: Publications,
   },
+  {
+    label: 'Reading',
+    component: Reading,
+  },
 ];
 
-//  { 
-//    label: 'Reading',
-//    component: Reading, 
-//  },
-
 export default class Research extends Component {
+  constructor() {
+    super();
+    this.state = {
+      index: 0,
+    };
+    this.renderTabComponent = this.renderTabComponent.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
   componentDidMount() {
     // Networking stuff
   }
+  handleChange(event, index) {
+    this.setState({ index });
+  }
+  renderTabComponent() {
+    const TabComp = tabs[this.state.index].component;
+    return <TabComp />;
+  }
   render() {
     return (
-      <Tabs>
-        {
-          tabs.map(tab => (
-            <Tab label={tab.label}>
-              <Paper style={style.paper}>
-                <tab.component />
-              </Paper>
-            </Tab>
-          ))
-        }
-      </Tabs>
+      <span>
+        <Tabs
+          centered
+          color="default"
+          fullWidth
+          index={this.state.index}
+          onChange={this.handleChange}
+        >
+          {
+            tabs.map(tab => (
+              <Tab key={tab.label} label={tab.label} />
+            ))
+          }
+        </Tabs>
+        <Paper style={style.paper}>
+          {this.renderTabComponent()}
+        </Paper>
+
+      </span>
     );
   }
 }

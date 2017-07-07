@@ -1,15 +1,11 @@
 import React from 'react';
 import BibtexParser from 'bib2json';
-import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card';
 import Button from 'material-ui/Button';
-import List from 'material-ui/List';
+import Loader from '../../components/Loader';
+import InformationContainer from '../../components/InformationContainer';
 
 import Constants from '../../constants.json';
 
-// Recieve from /Publications endpoint:
-// {
-//   $unique_key: "bibtex_string"
-// }
 
 export default class Publications extends React.Component {
   constructor() {
@@ -31,24 +27,17 @@ export default class Publications extends React.Component {
   }
   render() {
     return (
-      <List>
-        {this.state.data.map(pub => (
-          <Card>
-            <CardHeader
-              title={`${pub.Fields.year} // ${pub.Fields.title}`}
-              subtitle={pub.Fields.author}
-              actAsExpander
-              showExpandableButton
-            />
-            <CardActions>
-              <Button label="PDF" onTouchTap={() => window.open(pub.Fields.url, '_blank')} />
-            </CardActions>
-            <CardText expandable>
-              <p>{pub.Fields.abstract}</p>
-            </CardText>
-          </Card>
-        ))}
-      </List>
+      <Loader isLoaded={this.state.isLoaded}>
+        {this.state.data.map(pub =>
+          <InformationContainer
+            key={pub.Fields.title}
+            title={pub.Fields.title}
+            subtitle={pub.Fields.author}
+            button={<Button color="inherit" onTouchTap={() => window.open(pub.Fields.url, '_blank')}>PDF</Button>}
+            paragraphs={[pub.Fields.abstract]}
+          />,
+        )}
+      </Loader>
     );
   }
 }
