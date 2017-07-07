@@ -24,7 +24,7 @@ export default class Loader extends React.Component {
       });
     }
   }
- 
+
   render() {
     if (this.state.isLoaded) {
       return (
