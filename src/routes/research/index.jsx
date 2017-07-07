@@ -5,7 +5,6 @@ import Paper from 'material-ui/Paper';
 import Current from './current';
 import Publications from './publications';
 import Reading from './reading';
-
 const style = {
   paper: {
 
@@ -20,10 +19,6 @@ const tabs = [
   {
     label: 'Publications',
     component: Publications,
-  },
-  {
-    label: 'Reading',
-    component: Reading,
   },
 ];
 
