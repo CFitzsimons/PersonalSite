@@ -1,7 +1,7 @@
 import React from 'react';
 import BibtexParser from 'bib2json';
 import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
+import Button from 'material-ui/Button';
 import List from 'material-ui/List';
 
 import Constants from '../../constants.json';
@@ -41,7 +41,7 @@ export default class Publications extends React.Component {
               showExpandableButton
             />
             <CardActions>
-              <FlatButton label="PDF" onTouchTap={() => window.open(pub.Fields.url, '_blank')} />
+              <Button label="PDF" onTouchTap={() => window.open(pub.Fields.url, '_blank')} />
             </CardActions>
             <CardText expandable>
               <p>{pub.Fields.abstract}</p>

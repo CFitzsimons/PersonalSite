@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import IconHeader from './iconheader';
-import GridIcon from './gridicon';
-import {GridList, GridTile} from 'material-ui/GridList';
+// import GridIcon from './gridicon';
+// import {GridList, GridTile} from 'material-ui/GridList';
 
 const style = {
   gridList: {
@@ -31,12 +31,7 @@ export default class Projects extends Component {
   }
   render() {
     return (
-      <GridList
-        cellHeight={180}
-        style={style.gridList}
-      >
-        <GridIcon subtitle="this is a subtitle, it shouldn't have too much information but hey, it's still pretty cool and stuff." text="Disconnect" />
-      </GridList>
+      <h1>Projects...</h1>
     );
   }
 }

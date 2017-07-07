@@ -4,13 +4,19 @@ import Drawer from 'material-ui/Drawer';
 import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
 import NavigationClose from 'material-ui-icons/Close';
-import NavigationMenu from 'material-ui-icons/Menu';
+import MenuIcon from 'material-ui-icons/Menu';
+import Toolbar from 'material-ui/Toolbar';
+import Typography from 'material-ui/Typography';
+import Avatar from 'material-ui/Avatar';
 
 import Navigation from './navigation';
 import Dashboard from './dashboard/index';
 import Projects from './projects/index';
 import Research from './research/index';
 import Blog from './blog/index';
+
+import github from '../../graphics/github.png';
+import linkedin from '../../graphics/linkedin.png';
 
 const Routes = () => (
   <Router history={browserHistory}>
@@ -20,8 +26,15 @@ const Routes = () => (
     <Route path="research" component={Research} />
   </Router>
 );
-
-export default class extends React.Component {
+const style = {
+  title: {
+    flex: 1,
+  },
+};
+export default class Main extends React.Component {
+  static openURL(url) {
+    window.open(url, '_blank');
+  }
   constructor() {
     super();
     this.state = {
@@ -38,22 +51,36 @@ export default class extends React.Component {
     return (
       <span>
         <AppBar
-          title="Colin Fitzsimons"
-          iconElementLeft={
-            <IconButton onTouchTap={this.toggleNavigation}>
-              <NavigationMenu />
+          position="static"
+        >
+          <Toolbar>
+            <IconButton color="contrast" aria-label="Menu" onTouchTap={this.toggleNavigation}>
+              <MenuIcon />
             </IconButton>
-          }
-        />
-        <Drawer open={this.state.isOpen} containerStyle={{ backgroundColor: 'rgb(46,49,54)' }}>
+            <Typography type="title" color="inherit" style={style.title}>
+              Colin Fitzsimons
+            </Typography>
+            <IconButton color="contrast" aria-label="Menu" onTouchTap={() => Main.openURL('https://github.com/cfitzsimons')}>
+              <Avatar src={github} />
+            </IconButton>
+            <IconButton color="contrast" aria-label="Menu" onTouchTap={() => Main.openURL('https://www.linkedin.com/in/cfitzsimons/')}>
+              <Avatar src={linkedin} />
+            </IconButton>
+          </Toolbar>
+        </AppBar>
+        <Drawer open={this.state.isOpen}>
           <AppBar
-            title={<span>Navigation</span>}
-            iconElementLeft={
-              <IconButton onTouchTap={this.toggleNavigation}>
+            position="static"
+          >
+            <Toolbar>
+              <IconButton color="inherit" aria-label="Menu" onTouchTap={this.toggleNavigation}>
                 <NavigationClose />
               </IconButton>
-            }
-          />
+              <Typography type="title" color="inherit">
+                Navigation
+              </Typography>
+            </Toolbar>
+          </AppBar>
           <Navigation closeEvent={this.toggleNavigation} />
         </Drawer>
         <Routes />

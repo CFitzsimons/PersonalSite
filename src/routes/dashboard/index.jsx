@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { Card, CardActions, CardHeader, CardTitle, CardText } from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
+import Card, { CardActions, CardContent, CardHeader } from 'material-ui/Card';
+import Button from 'material-ui/Button';
+import Typography from 'material-ui/Typography';
+import Avatar from 'material-ui/Avatar';
 
 import ProfilePhoto from './colin.jpg';
 
@@ -42,17 +44,24 @@ export default class Dashboard extends Component {
       <div style={style.container}>
         <Card style={style.card}>
           <CardHeader
+            avatar={
+              <Avatar src={ProfilePhoto} />
+            }
             title="Colin Fitzsimons"
-            subtitle="PhD Student"
-            avatar={ProfilePhoto}
+            subheader="PhD Student"
           />
-          <CardTitle title="Department of Computer Science" subtitle="Maynooth University" />
-          <CardText>
-            {introText}
-          </CardText>
+          <CardContent>
+            <Typography component="">
+              {introText}
+            </Typography>
+          </CardContent>
           <CardActions>
-            <FlatButton label="LinkedIn" onTouchTap={() => window.open('https://linkedin.com/in/cfitzsimons', '_blank')} />
-            <FlatButton label="Github" onTouchTap={() => window.open('https://github.com/cfitzsimons', '_blank')} />
+            <Button onTouchTap={() => window.open('https://linkedin.com/in/cfitzsimons', '_blank')}>
+              LinkedIn
+            </Button>
+            <Button onTouchTap={() => window.open('https://github.com/cfitzsimons', '_blank')}>
+              Github
+            </Button>
           </CardActions>
         </Card>
       </div>
