@@ -38,9 +38,25 @@ export default class Main extends React.Component {
   constructor() {
     super();
     this.state = {
+      width: '0',
+      height: '0',
       isOpen: false,
     };
     this.toggleNavigation = this.toggleNavigation.bind(this);
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+  }
+
+  componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+  }
+
+  updateWindowDimensions() {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
   }
   toggleNavigation() {
     this.setState({
@@ -77,13 +93,15 @@ export default class Main extends React.Component {
                 <NavigationClose />
               </IconButton>
               <Typography type="title" color="inherit">
-                Navigation
+                Navigation Menu
               </Typography>
             </Toolbar>
           </AppBar>
           <Navigation closeEvent={this.toggleNavigation} />
         </Drawer>
-        <Routes />
+        <div style={{ maxHeight: this.state.height - 63, overflow: 'auto' }}>
+          <Routes />
+        </div>
       </span>
     );
   }
