@@ -43,4 +43,5 @@ export default class Loader extends React.Component {
 }
 Loader.propTypes = {
   isLoaded: PropTypes.bool.isRequired,
+  children: PropTypes.node.isRequired,
 };
