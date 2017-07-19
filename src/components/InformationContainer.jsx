@@ -3,6 +3,7 @@ import Typography from 'material-ui/Typography';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import PropTypes from 'prop-types';
+import { withTheme } from 'material-ui/styles';
 
 const style = {
   bodyContainer: {
@@ -12,7 +13,7 @@ const style = {
 
 const InformationContainer = props => (
   <span>
-    <AppBar position="static">
+    <AppBar position="static" color="primary">
       <Toolbar>
         <Typography
           type="title"
@@ -39,24 +40,31 @@ const InformationContainer = props => (
         }
       </Toolbar>
     </AppBar>
-    {props.paragraphs.map(text => (
-      <Typography key={text.substring(0, 10)} style={style.bodyContainer}>
-        {text}
-      </Typography>
-    ))}
+    <div style={{ backgroundColor: props.theme.palette.accent[500], padding: 5 }}>
+      {props.paragraphs.map(text => (
+        <Typography key={text.substring(0, 10)} style={style.bodyContainer}>
+          {text}
+        </Typography>
+      ))}
+      {props.children}
+    </div>
   </span>
 );
 
 InformationContainer.propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string,
-  paragraphs: PropTypes.arrayOf(PropTypes.string).isRequired,
+  paragraphs: PropTypes.arrayOf(PropTypes.string),
   button: PropTypes.node,
+  children: PropTypes.node,
+  theme: PropTypes.node.isRequired,
 };
 
 InformationContainer.defaultProps = {
   button: null,
   subtitle: null,
+  paragraphs: [],
+  children: null,
 };
 
-export default InformationContainer;
+export default withTheme(InformationContainer);

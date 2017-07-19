@@ -1,0 +1,5 @@
+{
+  "server": [
+    "NodeJS is a JavaScript runtime built to run smoothly as server architecture.  It’s use of non-blocking IO and event handling make it ideal for quickly creating scalable systems.  Many of the projects I have completed have been done either entirely using NodeJS or using NodeJS as the backend.  "
+  ]
+}
