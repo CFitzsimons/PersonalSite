@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
-import Card, { CardActions, CardContent, CardHeader } from 'material-ui/Card';
-import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
-import Avatar from 'material-ui/Avatar';
+import { withTheme } from 'material-ui/styles';
 
+import InformationContainer from '../../components/InformationContainer';
+
+import HeaderPhoto from './panorama.jpg';
+// import NodeJS from './nodejs.png';
 import ProfilePhoto from './colin.jpg';
+import Text from './text.json';
 
 
 const style = {
@@ -27,44 +30,90 @@ const style = {
   card: {
     margin: 10,
   },
+  itemNavigationContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    display: 'flex',
+    flex: 0.25,
+  },
+  iconContainer: {
+    borderWidth: 5,
+    height: 150,
+    width: 150,
+    borderRadius: 150,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  imageContainer: {
+    display: 'flex',
+    flex: 0.5,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  headerImage: {
+    flex: 2,
+    maxHeight: 500,
+  },
+  headerContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    flex: 1,
+  },
+  flexRow: {
+    display: 'flex',
+    flexDirection: 'row',
+  },
 };
 
-const introText = 'I am a PhD Student funded by the Irish Research Council conducting ' +
-  'research into program construction in immersive environments.  ' +
-  'A great deal of my current work revolves around investigating ' +
-  'the cognitive benefits of an immersive language as well as novel ' +
-  'approaches to designing immersive programming systems.  ';
-
-export default class Dashboard extends Component {
-  componentDidMount() {
-    // Networking stuff
-  }
+class Dashboard extends Component {
   render() {
     return (
-      <div style={style.container}>
-        <Card style={style.card}>
-          <CardHeader
-            avatar={
-              <Avatar src={ProfilePhoto} />
-            }
-            title="Colin Fitzsimons"
-            subheader="PhD Student"
-          />
-          <CardContent>
-            <Typography component="">
-              {introText}
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button onTouchTap={() => window.open('https://linkedin.com/in/cfitzsimons', '_blank')}>
-              LinkedIn
-            </Button>
-            <Button onTouchTap={() => window.open('https://github.com/cfitzsimons', '_blank')}>
-              Github
-            </Button>
-          </CardActions>
-        </Card>
-      </div>
+      <span>
+        <div
+          style={Object.assign(
+            {},
+            { backgroundColor: this.props.theme.palette.primary[400] },
+            style.headerContainer)}
+        >
+          <div style={{ flex: 1 }} />
+          <img alt="Header (Hong Kong)" src={HeaderPhoto} style={style.headerImage} />
+          <div style={{ flex: 1 }} />
+        </div>
+        <InformationContainer title="Who am I?">
+          <div style={style.flexRow}>
+            <div style={{ flex: 0.75 }}>
+              {
+                Text.about.map(text => (
+                  <Typography paragraph >
+                    {text}
+                  </Typography>
+                ))
+              }
+            </div>
+            <div style={{ flex: 0.25 }}>
+              <img alt="Colin Fitzsimons" src={ProfilePhoto} style={{ width: '100%' }} />
+            </div>
+          </div>
+        </InformationContainer>
+
+      </span>
     );
   }
 }
+
+export default withTheme(Dashboard);
+
+
+// <InformationContainer title="Server" subtitle="NodeJS, Python">
+//   <div style={{ display: 'flex', flexDirection: 'row' }}>
+//     <div style={{ flex: 0.75 }}>
+//       <Typography paragraph >
+//         {Text.server[0]}
+//       </Typography>
+//     </div>
+//     <div style={{ flex: 0.25 }}>
+//       <img alt="NodeJS logo" src={NodeJS} style={{ width: '100%' }} />
+//     </div>
+//   </div>
+// </InformationContainer>
