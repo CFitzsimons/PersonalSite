@@ -40,7 +40,7 @@ const InformationContainer = props => (
         }
       </Toolbar>
     </AppBar>
-    <div style={{ backgroundColor: props.theme.palette.accent[500], padding: 5 }}>
+    <div style={{ backgroundColor: props.theme.palette.primary.A200, padding: 5 }}>
       {props.paragraphs.map(text => (
         <Typography key={text.substring(0, 10)} style={style.bodyContainer}>
           {text}

@@ -1,17 +1,11 @@
 import React, { Component } from 'react';
-import Card, { CardActions, CardContent, CardHeader } from 'material-ui/Card';
-import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
-import Avatar from 'material-ui/Avatar';
 import { withTheme } from 'material-ui/styles';
-
-import Assignment from 'material-ui-icons/Assignment';
-import Home from 'material-ui-icons/Home';
-import Computer from 'material-ui-icons/Computer';
-import ContactMail from 'material-ui-icons/ContactMail';
 
 import InformationContainer from '../../components/InformationContainer';
 
+import HeaderPhoto from './panorama.jpg';
+// import NodeJS from './nodejs.png';
 import ProfilePhoto from './colin.jpg';
 import Text from './text.json';
 
@@ -57,64 +51,69 @@ const style = {
     justifyContent: 'center',
     alignItems: 'center',
   },
+  headerImage: {
+    flex: 2,
+    maxHeight: 500,
+  },
+  headerContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    flex: 1,
+  },
+  flexRow: {
+    display: 'flex',
+    flexDirection: 'row',
+  },
 };
 
-// const navigationIcons = [
-//   {
-//     icon: Assignment,
-//   },
-//   {
-//     icon: Computer,
-//   },
-//   {
-//     icon: ContactMail,
-//   },
-// ];
-
-const introText = 'I am a PhD Student funded by the Irish Research Council conducting ' +
-  'research into program construction in immersive environments.  ' +
-  'A great deal of my current work revolves around investigating ' +
-  'the cognitive benefits of an immersive language as well as novel ' +
-  'approaches to designing immersive programming systems.  ';
-import NodeJS from './nodejs.png';
 class Dashboard extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <span>
-        <div style={{ display: 'flex', flexDirection: 'row', flex: 1 }}>
+        <div
+          style={Object.assign(
+            {},
+            { backgroundColor: this.props.theme.palette.primary[400] },
+            style.headerContainer)}
+        >
           <div style={{ flex: 1 }} />
-          <img src={ProfilePhoto} style={{ flex: 2, width: '100%' }} />
+          <img alt="Header (Hong Kong)" src={HeaderPhoto} style={style.headerImage} />
           <div style={{ flex: 1 }} />
         </div>
-
-        <InformationContainer title="Server" subtitle="NodeJS, Python">
-          <div style={{ display: 'flex', flexDirection: 'row' }}>
+        <InformationContainer title="Who am I?">
+          <div style={style.flexRow}>
             <div style={{ flex: 0.75 }}>
-              <Typography paragraph >
-                {Text.server[0]}
-              </Typography>
+              {
+                Text.about.map(text => (
+                  <Typography paragraph >
+                    {text}
+                  </Typography>
+                ))
+              }
             </div>
             <div style={{ flex: 0.25 }}>
-              <img src={NodeJS} style={{ width: '100%' }} />
+              <img alt="Colin Fitzsimons" src={ProfilePhoto} style={{ width: '100%' }} />
             </div>
           </div>
         </InformationContainer>
-        {/* <InformationContainer title="Server" subtitle="NodeJS, Python" paragraphs={['hello']} />
-        <InformationContainer title="Server" subtitle="NodeJS, Python" paragraphs={['hello']} />
-        <InformationContainer title="Server" subtitle="NodeJS, Python" paragraphs={['hello']} />
-        <InformationContainer title="Server" subtitle="NodeJS, Python" paragraphs={['hello']} />
-        <InformationContainer title="Server" subtitle="NodeJS, Python" paragraphs={['hello']} />
-        <InformationContainer title="Server" subtitle="NodeJS, Python" paragraphs={['hello']} />
-        <InformationContainer title="Server" subtitle="NodeJS, Python" paragraphs={['hello']} />
-        <InformationContainer title="Server" subtitle="NodeJS, Python" paragraphs={['hello']} />
-        <InformationContainer title="Server" subtitle="NodeJS, Python" paragraphs={['hello']} /> */}
+
       </span>
     );
   }
 }
 
 export default withTheme(Dashboard);
+
+
+// <InformationContainer title="Server" subtitle="NodeJS, Python">
+//   <div style={{ display: 'flex', flexDirection: 'row' }}>
+//     <div style={{ flex: 0.75 }}>
+//       <Typography paragraph >
+//         {Text.server[0]}
+//       </Typography>
+//     </div>
+//     <div style={{ flex: 0.25 }}>
+//       <img alt="NodeJS logo" src={NodeJS} style={{ width: '100%' }} />
+//     </div>
+//   </div>
+// </InformationContainer>
