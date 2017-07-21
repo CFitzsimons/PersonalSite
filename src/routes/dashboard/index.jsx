@@ -64,6 +64,12 @@ const style = {
     display: 'flex',
     flexDirection: 'row',
   },
+  imageSection: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 0.25,
+  },
 };
 
 class Dashboard extends Component {
@@ -91,7 +97,7 @@ class Dashboard extends Component {
                 ))
               }
             </div>
-            <div style={{ flex: 0.25 }}>
+            <div style={style.imageSection}>
               <img alt="Colin Fitzsimons" src={ProfilePhoto} style={{ width: '100%' }} />
             </div>
           </div>
