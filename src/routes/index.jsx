@@ -30,6 +30,9 @@ const style = {
   title: {
     flex: 1,
   },
+  navigationTitle: {
+    minWidth: 200,
+  },
 };
 export default class Main extends React.Component {
   static openURL(url) {
@@ -92,8 +95,8 @@ export default class Main extends React.Component {
               <IconButton color="inherit" aria-label="Menu" onTouchTap={this.toggleNavigation}>
                 <NavigationClose />
               </IconButton>
-              <Typography type="title" color="inherit">
-                Navigation Menu
+              <Typography type="title" color="inherit" style={style.navigationTitle}>
+                Navigation
               </Typography>
             </Toolbar>
           </AppBar>

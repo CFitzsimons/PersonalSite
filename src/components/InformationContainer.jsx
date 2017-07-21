@@ -57,7 +57,7 @@ InformationContainer.propTypes = {
   paragraphs: PropTypes.arrayOf(PropTypes.string),
   button: PropTypes.node,
   children: PropTypes.node,
-  theme: PropTypes.node.isRequired,
+  theme: PropTypes.object.isRequired,
 };
 
 InformationContainer.defaultProps = {
