@@ -3,10 +3,15 @@
     "plugins": [
         "react",
         "jsx-a11y",
-        "import"
+        "import",
+        "react-native"
     ],
     "rules": {
-      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+      "react-native/no-unused-styles": 2,
+      "react-native/split-platform-components": 2,
+      "react-native/no-inline-styles": 2,
+      "react-native/no-color-literals": 2
     },
     "globals": {
       "window": true,

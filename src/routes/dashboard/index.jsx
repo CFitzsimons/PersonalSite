@@ -3,11 +3,15 @@ import Typography from 'material-ui/Typography';
 import { withTheme } from 'material-ui/styles';
 
 import InformationContainer from '../../components/InformationContainer';
+import ResponsiveContainer from '../../components/responsiveContainer';
 
 import HeaderPhoto from './panorama.jpg';
-// import NodeJS from './nodejs.png';
+import NodeJS from './node-logo.png';
 import ProfilePhoto from './colin.jpg';
+import ReactLogo from './react.svg';
 import Text from './text.json';
+import Process from './web-console.jpg';
+import Mocha from './mocha.svg';
 
 
 const style = {
@@ -52,7 +56,9 @@ const style = {
     alignItems: 'center',
   },
   headerImage: {
-    flex: 2,
+    margin: 10,
+    borderRadius: 500,
+    maxWidth: '100%',
     maxHeight: 500,
   },
   headerContainer: {
@@ -63,6 +69,20 @@ const style = {
   flexRow: {
     display: 'flex',
     flexDirection: 'row',
+  },
+  emblemContainer: {
+    margin: 10,
+    display: 'flex',
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'column',
+  },
+  emblem: {
+    maxWidth: 150,
+    maxHeight: 150,
+    width: '100%',
+    height: '100%',
   },
 };
 
@@ -76,26 +96,26 @@ class Dashboard extends Component {
             { backgroundColor: this.props.theme.palette.primary[400] },
             style.headerContainer)}
         >
-          <div style={{ flex: 1 }} />
-          <img alt="Header (Hong Kong)" src={HeaderPhoto} style={style.headerImage} />
-          <div style={{ flex: 1 }} />
+          <ResponsiveContainer heading="Colin Fitzsimons" image={ProfilePhoto} text="Software Engineer" />
         </div>
-        <InformationContainer title="Who am I?">
-          <div style={style.flexRow}>
-            <div style={{ flex: 0.75 }}>
-              {
-                Text.about.map(text => (
-                  <Typography paragraph >
-                    {text}
-                  </Typography>
-                ))
-              }
+        <div style={{ display: 'flex', backgroundColor: this.props.theme.palette.primary[500], flexDirection: 'row' }}>
+            <div style={{ flex: 1 }} />
+            <div style={{ flex: 8, alignItems: 'center', justifyContent: 'center', display: 'flex', flexDirection: 'row' }}>
+              <div style={style.emblemContainer}>
+                <img src={NodeJS} style={style.emblem} />
+              </div>
+              <div style={style.emblemContainer}>
+                <img src={Mocha} style={style.emblem} />
+              </div>
+              <div style={style.emblemContainer}>
+                <img src={ReactLogo} style={style.emblem} />
+              </div>
             </div>
-            <div style={{ flex: 0.25 }}>
-              <img alt="Colin Fitzsimons" src={ProfilePhoto} style={{ width: '100%' }} />
-            </div>
-          </div>
-        </InformationContainer>
+            <div style={{ flex: 1 }} />
+        </div>
+        <div style={{ display: 'flex', backgroundColor: this.props.theme.palette.primary[400], justifyContent: 'center', alignItems: 'center'}}>
+          <ResponsiveContainer flipped heading="Simple, Clean Web UI" image={Process} text="Reliable dashboards, websites and online services designed using clear UI guidelines.  " />
+        </div>
 
       </span>
     );
@@ -104,16 +124,7 @@ class Dashboard extends Component {
 
 export default withTheme(Dashboard);
 
-
-// <InformationContainer title="Server" subtitle="NodeJS, Python">
-//   <div style={{ display: 'flex', flexDirection: 'row' }}>
-//     <div style={{ flex: 0.75 }}>
-//       <Typography paragraph >
-//         {Text.server[0]}
-//       </Typography>
-//     </div>
-//     <div style={{ flex: 0.25 }}>
-//       <img alt="NodeJS logo" src={NodeJS} style={{ width: '100%' }} />
-//     </div>
-//   </div>
-// </InformationContainer>
+// Design
+// Create
+// Test
+// Release
